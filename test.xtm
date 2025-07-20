@@ -1,0 +1,16 @@
+(define scheme-closure
+  (lambda (a b)
+    (let ((result (* a b)))
+      (print "result = " result)
+      result)))
+
+(scheme-closure 4 5) ;; prints "result = 20", returns 20
+(scheme-closure 2.4 2) ;; prints "result = 4.8", returns 4.8
+
+(bind-func xtlang_closure
+  (lambda (c:double d:i64)
+    (let ((result (* c (i64tod d))))
+      (printf "result = %f\n" result)
+      result)))
+
+(xtlang_closure 4.5 2) ;; prints "result = 9.000000", returns 9.0
